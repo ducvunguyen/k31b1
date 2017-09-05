@@ -1,0 +1,31 @@
+p{
+	/*font-weight: bold;*/
+	color: brown;
+}
+.block{
+	display: block;
+}
+.inline{
+	display: inline;
+}
+.logo{
+	background: green;
+	width: 25%;
+	height: 80px;
+	display: inline-block;
+}
+.logo img{
+	width: 100%;
+}
+nav{
+	background: yellow;
+	width: 74%;
+	height: 80px;
+	display: inline-block;
+}
+.tin-tuc{
+	border: 1px solid #ccc;
+	display: inline-block;
+	width: 24%;
+	height: 200px;
+}
