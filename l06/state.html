@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.bg-green{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+		}
+		.bg-green:hover{
+			background-color: lightgreen;
+		}
+		.bg-green:hover p{
+			display: block;
+		}
+		.bg-green:hover+p{
+			display: none;
+		}
+		.bg-green p{
+			display: none;
+		}
+		a:active{
+			color: yellow;
+		}
+		input:focus{
+			color: red;
+			background-color: yellow;
+		}
+		a:visited{
+			color: brown;
+		}
+	</style>
+</head>
+<body>
+	<div class="bg-green">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+	</div>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur aperiam quis nulla id neque! Accusamus magnam, repellat ipsum dolorum vitae. </p>
+	<a href="#" title="">Lorem ipsum dolor sit.</a>
+	<a href="http://imdev.xyz" title="">Imdev</a>
+	<br>
+	<input type="text" name="" value="" placeholder="">
+</body>
+</html>
