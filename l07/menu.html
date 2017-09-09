@@ -6,20 +6,30 @@
 	<title></title>
 	<link rel="stylesheet" href="public/plugins/font-awesome/css/font-awesome.min.css">
 	<style type="text/css" media="screen">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		nav{
+			background: #2ca9e1;
+		}
 		nav ul{
 			list-style: none;
 		    list-style-type: none;
 		    height: 45px;
 		    line-height: 45px;
-		    background: #2ca9e1;
+		    display: block;
+		    width: 960px;
+		    margin: auto;
 		}
+		
 		nav ul li{
 			display: block;
 			float: left;
     		min-width: 80px;
     		text-align: center;
     		border-right: 1px dashed #ccc;
-    		padding: 0 5px;
+    		position: relative;
 		}
 		nav ul li:last-child{
 			border-right: none;
@@ -29,6 +39,27 @@
 		}
 		nav ul li a{
 			display: block;
+			color: #fff;
+			text-decoration: none;
+			padding: 0 10px;
+		}
+		nav ul li ul.dropdown{
+			display: none;
+			position: absolute;
+			top: 45px;
+			left: 0;
+			width: 120px;
+		}
+		nav ul li ul.dropdown li{
+			display: block;
+			background-color: #2ca9e1;
+			border: none;
+		}
+		nav ul li ul.dropdown li:hover{
+			background-color: lightblue;
+		}
+		nav ul li:hover ul.dropdown{
+			display: block;
 		}
 	</style>
 </head>
@@ -37,19 +68,66 @@
 		<ul>
 			<li>
 				<a href="" title=""> 
-				<i class="fa fa-home"></i>
-				Trang chủ </a>
+					<i class="fa fa-home" aria-hidden="true"></i>
+					Trang chủ 
+				</a>
+				<ul class="dropdown">
+					<li>
+						<a href="" title=""> 
+							<i class="fa fa-home" aria-hidden="true"></i>
+							Trang chủ 1 
+						</a>
+					</li>
+					<li>
+						<a href="" title=""> 
+							<i class="fa fa-home" aria-hidden="true"></i>
+							Trang chủ 2
+						</a>
+					</li>
+					<li>
+						<a href="" title=""> 
+							<i class="fa fa-home" aria-hidden="true"></i>
+							Trang chủ 3 
+						</a>
+					</li>
+				</ul>
 			</li>
 			<li>
 				<a href="" title="">
 				<i class="fa fa-plus" aria-hidden="true"></i>
-				Lorem ipsum</a>
+				Danh mục</a>
+				<ul class="dropdown">
+					<li>
+						<a href="" title=""> 
+							<i class="fa fa-home" aria-hidden="true"></i>
+							Danh mục 1 
+						</a>
+					</li>
+					<li>
+						<a href="" title=""> 
+							<i class="fa fa-home" aria-hidden="true"></i>
+							Danh mục 2
+						</a>
+					</li>
+					<li>
+						<a href="" title=""> 
+							<i class="fa fa-home" aria-hidden="true"></i>
+							Danh mục 3 
+						</a>
+					</li>
+				</ul>
 			</li>
 			<li>
-				<a href="" title="">Lorem </a>
+				<a href="" title="">
+					<i class="fa fa-bath" aria-hidden="true"></i>
+					Giới thiệu 
+				</a>
 			</li>
 			<li>
-				<a href="" title="">Lorem</a>
+				<a href="" title="">
+					<i class="fa fa-address-card-o" aria-hidden="true"></i>
+					Liên hệ
+				</a>
 			</li>
 		</ul>
 	</nav>
