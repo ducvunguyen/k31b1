@@ -2,6 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
+a, p, span, label, h1, h2, h3, h4, h6, h6, b, i, em{
+	font-family: arial;
+}
 .container{
 	width: 1170px;
 	margin: auto;
@@ -10,6 +13,9 @@
 	clear: both;
 	content: " ";
 	display: table;
+}
+img{
+	width: 100%;
 }
 /*
 	BEGIN HEADER
@@ -152,8 +158,27 @@ nav ul li.mega-menu>.mega-content{
 	top: 45px;
 	left: 0;
 	right: 0;
-	min-height: 200px;
-	background: aqua;
+	/*min-height: 200px;*/
+	background: #fff;
+	box-shadow: 0 1px 3px 1px #cecece;
+}
+.mega-content>.mega-unit{
+	float: left;
+    width: 24%;
+    /*border-right: 1px solid #000;*/
+    min-height: 200px;
+    padding: 0 3px;
+    margin-right: 4px;
+}
+.mega-unit>a.thumbnail{
+	display: block;
+	color: #000;
+	line-height: 18px;
+	padding-bottom: 10px;
+	text-align: left;
+}
+.mega-unit>a.thumbnail>p:hover{
+	text-decoration: underline;
 }
 /*
 END NAVIGATION
