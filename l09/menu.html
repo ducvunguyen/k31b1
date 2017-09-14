@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="public/plugins/font-awesome/css/font-awesome.min.css">
+	<style type="text/css" media="screen">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		nav{
+			background: #2ca9e1;
+		}
+		nav ul{
+			list-style: none;
+		    list-style-type: none;
+		    height: 45px;
+		    line-height: 45px;
+		    display: block;
+		    width: 960px;
+		    margin: auto;
+		    position: relative;
+		}
+		
+		nav ul li{
+			display: block;
+			float: left;
+    		min-width: 80px;
+    		text-align: center;
+    		border-right: 1px dashed #ccc;
+    		position: relative;
+		}
+		nav ul li:last-child{
+			border-right: none;
+		}
+		nav ul li:hover{
+			background-color: lightblue;
+		}
+		nav ul li a{
+			display: block;
+			color: #fff;
+			text-decoration: none;
+			padding: 0 10px;
+		}
+		nav ul li ul.dropdown{
+			display: none;
+			position: absolute;
+			top: 45px;
+			left: 0;
+			width: 170px;
+		}
+		nav ul li ul.dropdown li{
+			display: block;
+			background-color: #2ca9e1;
+			border: none;
+		}
+		nav ul li ul.dropdown li:hover{
+			background-color: lightblue;
+		}
+		nav ul li:hover>ul.dropdown, 
+		nav ul li.mega-menu:hover>.mega-content{
+			display: block;
+		}
+		nav ul ul ul.dropdown{
+			top: 0;
+			left: 100%;
+		}
+		nav ul li.mega-menu{
+			position: static;
+		}
+		nav ul li.mega-menu>.mega-content{
+			display: none;
+			position: absolute;
+			top: 45px;
+			left: 0;
+			right: 0;
+			min-height: 200px;
+			background: aqua;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li>
+				<a href="" title=""> 
+					<i class="fa fa-home" aria-hidden="true"></i>
+					Trang chủ 
+				</a>
+				<ul class="dropdown">
+					<li>
+						<a href="" title=""> 
+							<i class="fa fa-home" aria-hidden="true"></i>
+							Trang chủ 1 
+						</a>
+					</li>
+					<li>
+						<a href="" title=""> 
+							<i class="fa fa-home" aria-hidden="true"></i>
+							Trang chủ 2
+						</a>
+					</li>
+					<li>
+						<a href="" title=""> 
+							<i class="fa fa-home" aria-hidden="true"></i>
+							Trang chủ 3 
+						</a>
+						<ul class="dropdown">
+							<li>
+								<a href="" title=""> 
+									<i class="fa fa-home" aria-hidden="true"></i>
+									Trang chủ 3.1
+								</a>
+							</li>
+							<li>
+								<a href="" title=""> 
+									<i class="fa fa-home" aria-hidden="true"></i>
+									Trang chủ 3.2
+								</a>
+							</li>
+							<li>
+								<a href="" title=""> 
+									<i class="fa fa-home" aria-hidden="true"></i>
+									Trang chủ 3.3 
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="" title="">
+				<i class="fa fa-plus" aria-hidden="true"></i>
+				Danh mục</a>
+				<ul class="dropdown">
+					<li>
+						<a href="" title=""> 
+							<i class="fa fa-home" aria-hidden="true"></i>
+							Danh mục 1 
+						</a>
+					</li>
+					<li>
+						<a href="" title=""> 
+							<i class="fa fa-home" aria-hidden="true"></i>
+							Danh mục 2
+						</a>
+					</li>
+					<li>
+						<a href="" title=""> 
+							<i class="fa fa-home" aria-hidden="true"></i>
+							Danh mục 3 
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="mega-menu">
+				<a href="" title="">
+					<i class="fa fa-bath" aria-hidden="true"></i>
+					Giới thiệu 
+				</a>
+				<div class="mega-content">
+					
+				</div>
+			</li>
+			<li>
+				<a href="" title="">
+					<i class="fa fa-address-card-o" aria-hidden="true"></i>
+					Liên hệ
+				</a>
+			</li>
+		</ul>
+	</nav>
+	
+</body>
+</html>
