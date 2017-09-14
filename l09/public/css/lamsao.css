@@ -55,10 +55,33 @@ header:first-child{
 }
 .favor{
 	width: 300px;
-    background: green;
     float: right;
-    height: 80px;
     text-align: right;
+}
+ul.favor{
+	list-style: none;
+	list-style-type: none;
+}
+ul.favor li{
+	display: block;
+	float: right;
+	border-right: 1px dashed #ccc;
+	width: 100px;
+	text-align: center;
+}
+ul.favor li:first-child{
+	border-right: none;
+}
+ul.favor li i{
+	display: block;
+}
+ul.favor li a{
+	display: block;
+	text-decoration: none;
+	color: #000;
+}
+ul.favor li a:hover{
+	color: #2ca9e1;
 }
 /*
 	END HEADER
