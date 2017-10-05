@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		//1. Viết prompt để nhập một số nguyên, tìm bội số của số đó với các số từ 1-15 , sau đó in kết quả ra màn hình. 
+		var number = prompt("nhap so:");
+		document.write('Viết prompt để nhập một số nguyên, tìm bội số của số đó với các số từ 1-15 , sau đó in kết quả ra màn hình.<br>');
+		for (var i = 1; i <= 3; i++) {
+			var max = i * number;
+			var trueNumber = max;
+			for (var j = max; j >= 1; j--) {
+				if(j%i==0 && j%number==0){
+					trueNumber = j;
+					document.write(`số ${j} chia hết cho ${i} và ${number}<br>`);
+				}else{
+					document.write(`số ${j} không chia hết<br>`);
+				}
+			}
+			// document.write(`Bội số nhỏ nhất của ${arr[i]} và ${number} = ${trueNumber} <br>`);
+		}
+		//2. 
+		// var a = promp1 - nhập câu
+		// var b = promp2 - nhập ký tự
+		// Kiểm tra xem có bao nhiêu ký tự ở biến b xuất hiện trong chuỗi a
+		// 
+		// 3. Viết vòng lặp để hiển thị hết bảng cửu chương
+
+
+	</script>
+</body>
+</html>
