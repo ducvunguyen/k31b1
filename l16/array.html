@@ -11,7 +11,7 @@
 
 	<script type="text/javascript">
 		//1. Viết prompt để nhập một số nguyên, tìm bội số của số đó với các số từ 1-15 , sau đó in kết quả ra màn hình. 
-		var number = prompt("nhap so:");
+		/*var number = prompt("nhap so:");
 		document.write('Viết prompt để nhập một số nguyên, tìm bội số của số đó với các số từ 1-15 , sau đó in kết quả ra màn hình.<br>');
 		for (var i = 1; i <= 3; i++) {
 			var max = i * number;
@@ -25,14 +25,30 @@
 				}
 			}
 			// document.write(`Bội số nhỏ nhất của ${arr[i]} và ${number} = ${trueNumber} <br>`);
-		}
+		}*/
+
 		//2. 
 		// var a = promp1 - nhập câu
 		// var b = promp2 - nhập ký tự
 		// Kiểm tra xem có bao nhiêu ký tự ở biến b xuất hiện trong chuỗi a
-		// 
+		/*var a = prompt('Nhap cau:');
+		var b = prompt('Nhap ky tu:');
+		var count = 0;
+		for (var i = 0; i < a.length; i++) {
+			if(b === a[i]){
+				++count;
+			}
+		}
+		document.write(`Có ${count} ký tự '${b}' xuất hiện ở trong chuỗi '${a}'`);*/
 		// 3. Viết vòng lặp để hiển thị hết bảng cửu chương
-
+		document.write(`Bảng cửu chương<br>`);
+		for (var i = 1; i < 10; i++) {
+			document.write(`<div style="width: 30%; display: inline-block; border: 1px solid #000">`);
+			for (var j = 1; j <= 10; j++) {
+				document.write(`${i} * ${j} = ${i*j}<br>`);
+			}
+			document.write(`</div>`);
+		}
 
 	</script>
 </body>
