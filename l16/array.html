@@ -41,14 +41,40 @@
 		}
 		document.write(`Có ${count} ký tự '${b}' xuất hiện ở trong chuỗi '${a}'`);*/
 		// 3. Viết vòng lặp để hiển thị hết bảng cửu chương
-		document.write(`Bảng cửu chương<br>`);
+		/*document.write(`Bảng cửu chương<br>`);
 		for (var i = 1; i < 10; i++) {
 			document.write(`<div style="width: 30%; display: inline-block; border: 1px solid #000">`);
 			for (var j = 1; j <= 10; j++) {
 				document.write(`${i} * ${j} = ${i*j}<br>`);
 			}
 			document.write(`</div>`);
+		}*/
+		// 4. cho mang
+		var arr = [45,34,1,34,7,4,7,4,4,65,345,65,99,69,96];
+		// tìm 2 số có tổng lớn nhất trong mảng
+		var max = 0;
+		var result = [];
+		for (var i = 0; i < arr.length; i++) {
+			for (var j = 0; j < arr.length; j++) {
+				if(i === j){
+					continue;
+				}
+				if(max <= arr[i]+arr[j]){
+					max = arr[i]+arr[j];
+					result = [arr[i], arr[j]];
+				}
+			}
 		}
+		document.write(`2 số có tổng lớn nhất là: ${result[0]} + ${result[1]} = ${max}`);
+		// 5. tim tat ca cac so xuat hien tu 2 lan tro len
+
+
+
+
+
+
+
+
 
 	</script>
 </body>
