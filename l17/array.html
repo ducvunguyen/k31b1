@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		//1. Viết prompt để nhập một số nguyên, tìm bội số của số đó với các số từ 1-15 , sau đó in kết quả ra màn hình. 
+		/*var number = prompt("nhap so:");
+		document.write('Viết prompt để nhập một số nguyên, tìm bội số của số đó với các số từ 1-15 , sau đó in kết quả ra màn hình.<br>');
+		for (var i = 1; i <= 3; i++) {
+			var max = i * number;
+			var trueNumber = max;
+			for (var j = max; j >= 1; j--) {
+				if(j%i==0 && j%number==0){
+					trueNumber = j;
+					document.write(`số ${j} chia hết cho ${i} và ${number}<br>`);
+				}else{
+					document.write(`số ${j} không chia hết<br>`);
+				}
+			}
+			// document.write(`Bội số nhỏ nhất của ${arr[i]} và ${number} = ${trueNumber} <br>`);
+		}*/
+
+		//2. 
+		// var a = promp1 - nhập câu
+		// var b = promp2 - nhập ký tự
+		// Kiểm tra xem có bao nhiêu ký tự ở biến b xuất hiện trong chuỗi a
+		/*var a = prompt('Nhap cau:');
+		var b = prompt('Nhap ky tu:');
+		var count = 0;
+		for (var i = 0; i < a.length; i++) {
+			if(b === a[i]){
+				++count;
+			}
+		}
+		document.write(`Có ${count} ký tự '${b}' xuất hiện ở trong chuỗi '${a}'`);*/
+		// 3. Viết vòng lặp để hiển thị hết bảng cửu chương
+		/*document.write(`Bảng cửu chương<br>`);
+		for (var i = 1; i < 10; i++) {
+			document.write(`<div style="width: 30%; display: inline-block; border: 1px solid #000">`);
+			for (var j = 1; j <= 10; j++) {
+				document.write(`${i} * ${j} = ${i*j}<br>`);
+			}
+			document.write(`</div>`);
+		}*/
+		// 4. cho mang
+		// var arr = [45,34,1,34,7,4,7,4,4,65,345,65,99,69,96];
+		// tìm 2 số có tổng lớn nhất trong mảng
+		/*var max = 0;
+		var result = [];
+		for (var i = 0; i < arr.length; i++) {
+			for (var j = 0; j < arr.length; j++) {
+				if(i === j){
+					continue;
+				}
+				if(max <= arr[i]+arr[j]){
+					max = arr[i]+arr[j];
+					result = [arr[i], arr[j]];
+				}
+			}
+		}
+		document.write(`2 số có tổng lớn nhất là: ${result[0]} + ${result[1]} = ${max}`);*/
+		// 5. tim tat ca cac so xuat hien tu 2 lan tro len
+		
+		/*var result = [];
+		for (var i = 0; i < arr.length; i++) {
+			result[arr[i]] = 0;
+		}
+
+		for (var i = 0; i < arr.length; i++) {
+			result[arr[i]]++;
+		}
+
+		for (var i = 0; i < result.length; i++) {
+			if(result[i]>1){
+				document.write(`số ${i} xuất hiện ${result[i]} lần <br>`);
+			}
+		}*/
+
+		
+		/*for (var i = 0; i < arr.length; i++) {
+			var count = 1;
+			for (var j = 0; j < arr.length; j++) {
+				if(i===j) continue;
+				if(arr[i] === arr[j]){
+					count++;
+				}
+			}
+			if(count > 1){
+				document.write(`số ${arr[i]} xuất hiện ${count} lần<br>`);
+			}
+		}*/
+
+		// 6. tạo ra 1 mảng có 1000 phần tử là các số random ngẫu nhiên
+		// hiển thị các phần tử trong mảng nếu phần tử đó là bội số của 3 và 4
+		// var arr = [];
+		// var count = 0;
+		// for (var i = 0; i < 1000; i++) {
+		// 	arr[i] = Math.floor(Math.random() * 1000) + 1; 
+		// 	if(arr[i]%3 == 0 && arr[i]%4 == 0){
+		// 		document.writeln(`số ${arr[i]} chia hết cho cả 3 và 4<br>`);
+		// 		count++;
+		// 	}
+		// }
+
+		// document.writeln(`có ${count} số chia hết cho 3 và 4 trong mảng<br>`);
+		
+		// 7. tìm 100 số random chia hết cho 3 và 7
+
+		var count = 0;
+		var arr = [];
+		while(arr.length < 10){
+			var random = Math.floor(Math.random() * 1000) + 1; 
+			if(random%3 == 0 && random%7 == 0){
+				var flag = false;
+
+				// ktra tat ca cac phan tu trong mang arr
+				for (var i = 0; i < arr.length; i++) {
+					// neu phan tu dang dc xet co gia tri bang random
+					if(arr[i] == random){
+						// thi flag = true
+						flag = true;
+						// break khoi vong lap
+						break;
+					}
+				}
+
+				if(flag == false){
+					arr[count] = random;
+					count++;
+				}
+			}
+		}
+		console.log(arr);
+
+		// 9. cho 1 mảng có 100 phần tử random
+		// tìm các bộ 3 phần tử có độ dài hình thành tam giác và hiển thị chu vi, diện 
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+	</script>
+</body>
+</html>
