@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		// 9. cho 1 mảng có 100 phần tử random
+		// tìm các bộ 3 phần tử có độ dài hình thành tam giác và hiển thị chu vi, diện 
+		var arr = [];
+		for (var i = 0; i < 10; i++) {
+			arr[i] = Math.floor(Math.random()*1000) + 1;
+		}
+
+
+		for (var i = 0; i < arr.length; i++) {
+
+			for (var j = 0; j < arr.length; j++) {
+				if(i == j) continue;
+				
+				for (var k = 0; k < arr.length; k++) {
+					debugger;
+					if(i == k || j == k) continue;
+					if(arr[i]+arr[j] > arr[k] 
+						&& arr[i]+arr[k]>arr[j] 
+						&& arr[j]+arr[k] > arr[i]){
+						var cv = arr[i]+arr[k]+arr[j];
+						var p = cv/2;
+						var s = Math.sqrt(p*(p-arr[i])*(p-arr[j])*(p-arr[k]));
+						document.write(`
+							<fieldset>
+							<legend>Các vị trí index : ${i} - ${j} - ${k}</legend>
+							<br>
+							với độ dài ${arr[i]} - ${arr[j]} - ${arr[k]} có hình thành tam giác<br>
+							chu vi: ${cv}<br>
+							diện tích: ${s}
+							</fieldset>`);
+					}
+				}
+			}
+		}
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+	</script>
+</body>
+</html>
