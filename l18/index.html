@@ -8,9 +8,9 @@
 </head>
 <body>
 	<!-- onkeyup js -->
-	<input type="text" id="numberA" onkeyup="">
-	<input type="text" id="numberB" onkeyup="">
-	<input type="text" id="numberC" onkeyup="">
+	<input type="text" id="numberA" onkeyup="getNumberA()">
+	<input type="text" id="numberB" onkeyup="getNumberB()">
+	<input type="text" id="numberC" onkeyup="getNumberC()">
 
 
 
@@ -22,6 +22,34 @@
 
 	<script src="main.js"></script>
 	<script>
+		var total = 0;
+		var numberA = 0;
+		var numberB = 0;
+		var numberC = 0;
+		function getNumberA(){
+			numberA = document.getElementById('numberA').value;
+			numberA = isNaN(numberA) == true ? 0 : parseInt(numberA);
+			document.getElementById('target').innerText = numberA+numberB+numberC;
+		}
+		function getNumberB(){
+			numberB = document.getElementById('numberB').value;
+			numberB = isNaN(numberB) == true ? 0 : parseInt(numberB);
+			document.getElementById('target').innerText = numberA+numberB+numberC;
+		}
+		function getNumberC(){
+			numberC = document.getElementById('numberC').value;
+			numberC = isNaN(numberC) == true ? 0 : parseInt(numberC);
+			document.getElementById('target').innerText = numberA+numberB+numberC;
+		}
+		
+
+
+
+
+
+
+
+
 
 		function writeYourName(){
 			var val = document.getElementById('yourname').value;
