@@ -7,12 +7,44 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
+	<!-- onkeyup js -->
+	<input type="text" id="numberA" onkeyup="">
+	<input type="text" id="numberB" onkeyup="">
+	<input type="text" id="numberC" onkeyup="">
 
 
-	<!-- <script src="public/js/main.js"></script> -->
+
+
+
+	<h3 id="target">0</h3>
+	<!-- <button onclick="countPlus()">Click me ++</button> -->
+	<!-- <button onclick="countMinus()">Click me </button> -->
+
+	<script src="main.js"></script>
 	<script>
+
+		function writeYourName(){
+			var val = document.getElementById('yourname').value;
+			console.log(val);
+		}
+
+		var count = 0;
+		function countPlus(){
+			count++;
+			document.getElementById('target').innerText = count;
+		}
+		function countMinus(){
+			count--;
+			document.getElementById('target').innerText = count;
+		}
+
+		// checkTamgiac(3,4,5);
+		function tinhTong(a, b, c){
+			return a+b+c;
+		}
 		
-		
+		// var total = tinhTong(10,23,39);
+		// document.write(total+100);
 
 		/*var a  = 4;
 		var b = 10;
@@ -48,12 +80,12 @@
 		// x *= 5; <=> x = x*5;
 		// x /= 5; <=> x = x/5;
 		// x %= 5; <=> x = x%5;
-		var x = 10;
+		// var x = 10;
 		// console.log(8+x--+x+++(--x)-(--x+x+++x--));
 		// console.log(x);
-		x /=2;
-		x/=2;
-		console.log(x);
+		// x /=2;
+		// x/=2;
+		// console.log(x);
 
 
 
