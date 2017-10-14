@@ -62,33 +62,72 @@
 					// document.getElementById('phepCong').style.border = "3px solid orange";
 					break;
 				case '-':
-					// statements_1
+					phepToan = "-";
+					
+					gtLuaChon = "0";
+					kq.innerText = gtLuaChon;
 					break;
 				case 'x':
-					// statements_1
+					phepToan = "x";
+					
+					gtLuaChon = "0";
+					kq.innerText = gtLuaChon;
 					break;
 				case '/':
-					// statements_1
+					phepToan = "/";
+					
+					gtLuaChon = "0";
+					kq.innerText = gtLuaChon;
 					break;
 				case '%':
-					// statements_1
+					gtHienTai = gtHienTai/100;
+					gtLuaChon = "0";
+					phepToan = null
+					kq.innerText = gtHienTai;
 					break;
 				case '+-':
 					// statements_1
 					break;
 				case '=':
+					if(phepToan == null) break;
 					if(phepToan === "+"){
 						gtHienTai = parseFloat(gtHienTai) + parseFloat(gtLuaChon);
+						kq.innerText = gtHienTai; 
+					}else if(phepToan === "-"){
+						gtHienTai = parseFloat(gtHienTai) - parseFloat(gtLuaChon);
+						kq.innerText = gtHienTai; 
+					}else if(phepToan === "x"){
+						gtHienTai = parseFloat(gtHienTai) * parseFloat(gtLuaChon);
+						kq.innerText = gtHienTai; 
+					}else if(phepToan === "/"){
+						gtHienTai = parseFloat(gtHienTai) / parseFloat(gtLuaChon);
 						kq.innerText = gtHienTai; 
 					}
 					phepToan = null;
 					clear = true;
 					break;
 				case '.':
-					// statements_1
+					debugger;
+					if(phepToan == null && !checkThapPhan(gtHienTai)){
+						gtHienTai += `.`;
+						kq.innerText = gtHienTai;
+						break;
+					}
+					
+					if(phepToan != null && !checkThapPhan(gtLuaChon)){
+						gtLuaChon += `.`;
+						kq.innerText = gtLuaChon;
+						
+					}
+					
 					break;
 				default:
 					if(phepToan == null){
+						if(checkThapPhan(gtHienTai)){
+							gtHienTai = `${gtHienTai}${giatri}`;
+							kq.innerText = gtHienTai;
+							break;
+						}
 						if(gtHienTai == 0 || clear == true){
 							gtHienTai = `${giatri}`;
 							clear = false;
@@ -104,10 +143,18 @@
 						}
 						kq.innerText = gtLuaChon;
 					}
-					
-					
 					break;
 			}
+		}
+
+
+		function checkThapPhan(str){
+			for (var i = 0; i < str.length; i++) {
+				if(str[i] === '.'){
+					return true;
+				}	
+			}
+			return false;
 		}
 	</script>
 		
