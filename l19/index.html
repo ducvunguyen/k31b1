@@ -10,7 +10,7 @@
 		<section class="container">
 			<div class="menu container">
 				<div class="menu-contain">
-					<h1>0</h1>
+					<h1 id="kq">0</h1>
 				</div>
 
 				<div class="main-menu">
@@ -32,15 +32,59 @@
 						<li><button onclick="nhannut(3)">3</button></li>
 						<li><button onclick="nhannut('/')">/</button></li>
 						<li><button onclick="nhannut(0)">0</button></li>
-						<li><button onclick="nhannut(.)">.</button></li>
-						<li class="menua"><button onclick="nhannut('=')">=</button></li>
-						
+						<li><button onclick="nhannut('.')">.</button></li>
+						<li class="menua"><button onclick="nhannut('=')">=</button></li>						
 					</ul>
 				</div>
 			</div>
 		</section>
 	
 	</div>
+	<script type="text/javascript">
+		var gtHienTai = "0";
+		var gtLuaChon = "0";
+		var phepToan = null;
+		var kq = document.getElementById('kq');
+		function nhannut(giatri){
+			switch (giatri) {
+				case 'ac':
+					// statements_1
+					break;
+				case '+':
+					// statements_1
+					break;
+				case '-':
+					// statements_1
+					break;
+				case 'x':
+					// statements_1
+					break;
+				case '/':
+					// statements_1
+					break;
+				case '%':
+					// statements_1
+					break;
+				case '+-':
+					// statements_1
+					break;
+				case '=':
+					// statements_1
+					break;
+				case '.':
+					// statements_1
+					break;
+				default:
+					if(gtLuaChon == 0){
+						gtLuaChon = `${giatri}`;
+					}else{
+						gtLuaChon = `${gtLuaChon}${giatri}`;
+					}
+					kq.innerText = gtLuaChon;
+					break;
+			}
+		}
+	</script>
 		
 </body>
 </html>
