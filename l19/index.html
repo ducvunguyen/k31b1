@@ -107,7 +107,6 @@
 					clear = true;
 					break;
 				case '.':
-					debugger;
 					if(phepToan == null && !checkThapPhan(gtHienTai)){
 						gtHienTai += `.`;
 						kq.innerText = gtHienTai;
@@ -117,7 +116,6 @@
 					if(phepToan != null && !checkThapPhan(gtLuaChon)){
 						gtLuaChon += `.`;
 						kq.innerText = gtLuaChon;
-						
 					}
 					
 					break;
@@ -136,7 +134,8 @@
 						}
 						kq.innerText = gtHienTai;
 					}else{
-						if(gtLuaChon == 0){
+						
+						if(gtLuaChon == 0 && !checkThapPhan(gtLuaChon)){
 							gtLuaChon = `${giatri}`;
 						}else{
 							gtLuaChon = `${gtLuaChon}${giatri}`;
