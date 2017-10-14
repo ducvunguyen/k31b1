@@ -18,7 +18,7 @@
 						<li><button onclick="nhannut('ac')">AC</button></li>
 						<li><button onclick="nhannut('+-')">+/_</button></li>
 						<li><button onclick="nhannut('%')">%</button></li>
-						<li><button onclick="nhannut('+')">+</button></li>
+						<li><button id="phepCong" onclick="nhannut('+')">+</button></li>
 						<li><button onclick="nhannut(7)">7</button></li>
 						<li><button onclick="nhannut(8)">8</button></li>
 						<li><button onclick="nhannut(9)">9</button></li>
@@ -44,14 +44,22 @@
 		var gtHienTai = "0";
 		var gtLuaChon = "0";
 		var phepToan = null;
+		var clear = false;
 		var kq = document.getElementById('kq');
 		function nhannut(giatri){
 			switch (giatri) {
 				case 'ac':
-					// statements_1
+					gtHienTai = "0";
+					gtLuaChon = "0";
+					phepToan = null;
+					kq.innerText = gtHienTai;
 					break;
 				case '+':
-					// statements_1
+					phepToan = "+";
+					
+					gtLuaChon = "0";
+					kq.innerText = gtLuaChon;
+					// document.getElementById('phepCong').style.border = "3px solid orange";
 					break;
 				case '-':
 					// statements_1
@@ -69,18 +77,35 @@
 					// statements_1
 					break;
 				case '=':
-					// statements_1
+					if(phepToan === "+"){
+						gtHienTai = parseFloat(gtHienTai) + parseFloat(gtLuaChon);
+						kq.innerText = gtHienTai; 
+					}
+					phepToan = null;
+					clear = true;
 					break;
 				case '.':
 					// statements_1
 					break;
 				default:
-					if(gtLuaChon == 0){
-						gtLuaChon = `${giatri}`;
+					if(phepToan == null){
+						if(gtHienTai == 0 || clear == true){
+							gtHienTai = `${giatri}`;
+							clear = false;
+						}else{
+							gtHienTai = `${gtHienTai}${giatri}`;
+						}
+						kq.innerText = gtHienTai;
 					}else{
-						gtLuaChon = `${gtLuaChon}${giatri}`;
+						if(gtLuaChon == 0){
+							gtLuaChon = `${giatri}`;
+						}else{
+							gtLuaChon = `${gtLuaChon}${giatri}`;
+						}
+						kq.innerText = gtLuaChon;
 					}
-					kq.innerText = gtLuaChon;
+					
+					
 					break;
 			}
 		}
