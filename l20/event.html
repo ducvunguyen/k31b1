@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body onload="changeText()">
+
+	<script type="text/javascript">
+		console.log(1);
+		function changeText(){
+			// debugger;
+			console.log(2);
+			var pElement = document.querySelector('p');
+			pElement.innerText = 't3h k31b1';
+		}		
+	</script>
+	<p>thienth</p>
+	<ul>
+		<li>
+			<a href="#part1" title="">Part 1</a>
+		</li>
+		<li>
+			<a href="#part2" title="">Part 2</a>
+		</li>
+		<li>
+			<a href="#part3" title="">Part 3</a>
+		</li>
+		<li>
+			<a href="#part4" title="">Part 4</a>
+		</li>
+		<li>
+			<a href="#part15" title="">Part 15</a>
+		</li>
+	</ul>
+
+	<div style="width: 400px; height: 400px; background: green;" onmouseover="">
+		
+	</div>
+
+	<script type="text/javascript">
+		function moveIn(){
+			console.log('mouse moving in');
+		}
+		function hashChang(){
+			console.log('changed');
+		}
+	</script>
+
+
+
+	<input type="text" onchange="changedEvent(this)">
+	<select onchange="changedEvent(this)">
+		<option value="1">1</option>
+		<option value="5">5</option>
+		<option value="4">4</option>
+		<option value="3">3</option>
+		<option value="2">2</option>
+	</select>
+	<textarea onchange="changedEvent(this)" onselect="selectedText()"></textarea>
+	<input type="checkbox" onchange="changedEvent(this)" value="1">
+	<script type="text/javascript">
+		function changedEvent(e){
+			console.log(e.value);
+		}
+
+		function selectedText(){
+			console.log('selected text');
+		}
+	</script>
+</body>
+</html>

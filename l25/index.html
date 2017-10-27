@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="public/css/index.css">
+</head>
+<body>
+	<p id="target" data-id="100" class="awesome">dong so 1</p>
+	<p id="target" data-id="99" class="green big-text">dong so 2</p>
+	<p id="target" data-id="100">dong so 3</p>
+	<p id="target" data-id="200"  class="green awesome">dong so 4</p>
+	<button type="button" onclick="removeP()">Click me</button>
+	<script type="text/javascript">
+		function removeP(){
+			// document.getElementById('gia tri id') => tra ra 1 dom
+			// <input type="text" name="k31b1" value="" placeholder="">
+			// document.getElementsByName('gia tri name') => mang chua dom
+
+			// document.getElementsByTagName('ten the') => mang chua dom
+
+			// document.getElementsByClassName('gia tri class') => mang chua dom
+			var awesomeDom = document.querySelectorAll('[data-id="100"]');
+			console.log(awesomeDom);
+			// 
+			// var listP = document.getElementsByTagName('p');
+			// for (var i = 0; i < listP.length; i++) {
+			// 	if(listP[i].getAttribute('data-id') == 100){
+			// 		listP[i].remove();
+			// 	}
+			// }
+			// var listP = document.getElementsByClassName('green');
+			// for (var i = 0; i < listP.length; i++) {
+			// 	listP[i].style.color = 'green';
+			// }
+		}
+		
+	</script>
+</body>
+</html>
