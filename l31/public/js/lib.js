@@ -18,11 +18,15 @@ window.lib = {
 	},
 	removeWhiteSpace: function (){
 		// lay ra gia tri cua the input
-		
+		var value = this.txt.value;
+		var result = "";
 		// tao vong lap while (dk ky tu khoang trang co ton tai trong chuoi)
-		
-			// su dung ham slice de cat tu vi tri index den vi tri index+2
-		
+		while(value.indexOf(' ') != -1){
+			var wsIndex = value.indexOf(' ');
+			result += value.slice(0, wsIndex);
+			value = value.slice(wsIndex+1, value.length);
+		}	
 		// hien thi ket qua 
+		console.log(result+value);
 	}
 }
