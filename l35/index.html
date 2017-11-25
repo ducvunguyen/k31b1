@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<input type="text" id="ipText" value="" placeholder="">
+	<button onclick="b5()">Submit</button>
+	<h2 id="result"></h2>
+	<script src="public/js/lib.js" type="text/javascript"></script>
+
+	<fieldset>
+		<legend>Bài 3</legend>
+		<input type="text" id="month" value="" placeholder="">
+		<input type="text" id="year" value="" placeholder="">
+		<button onclick="b3()">Submit</button>
+		<h2 id="resultB3"></h2>
+	</fieldset>
+	<script type="text/javascript">
+		var ip = document.querySelector('#ipText');
+		var result = document.querySelector('#result');
+		// b1: nhap 1 so bat ky tu 1->12 vao trong input
+		// bam submit => hien thi so ngay co trong thang do
+		function b1(){
+			// lấy giá trị trong input
+			var value = Number(ip.value);
+			// Định nghĩa các tháng có 31 ngày
+			var d31 = [1,3,5,7,8,10,12];
+			// Định nghĩa các tháng có 30 ngày
+			var d30 = [4,6,9,11];
+			if(d31.indexOf(value) != -1){ // kiểm tra xem tháng có trong danh sách tháng 31 ngày hay không
+				result.innerText = `Tháng ${value} có 31 ngày`;
+			}else if(d30.indexOf(value) != -1){ // kiểm tra xem tháng có trong danh sách tháng 30 ngày hay không
+				result.innerText = `Tháng ${value} có 30 ngày`;
+			}else{ // thuộc về 28 ngày
+				result.innerText = `Tháng ${value} có 28 ngày`;
+			}
+		}
+		// b2: nhập năm vào thẻ input, tính xem năm ấy có phải năm nhuận hay không
+		function b2(){
+			var year = Number(ip.value);
+			if(year%4 == 0){
+				result.innerText = `Năm ${year} là năm nhuận`;
+			}else{
+				result.innerText = `Năm ${year} không phải là năm nhuận`;
+			}
+		}
+
+		// b3: input1: nhập tháng (1-12)
+		// input2: nhập năm 
+		// => tính xem tháng ấy có bao nhiêu ngày
+		function b3(){
+			var month = Number(document.querySelector('#month').value);
+			var year = Number(document.querySelector('#year').value);
+			var result = document.querySelector('#resultB3');
+			// Định nghĩa các tháng có 31 ngày
+			var d31 = [1,3,5,7,8,10,12];
+			// Định nghĩa các tháng có 30 ngày
+			var d30 = [4,6,9,11];
+			if(d31.indexOf(month) != -1){ // kiểm tra xem tháng có trong danh sách tháng 31 ngày hay không
+				result.innerText = `Tháng ${month}/${year} có 31 ngày`;
+			}else if(d30.indexOf(month) != -1){ // kiểm tra xem tháng có trong danh sách tháng 30 ngày hay không
+				result.innerText = `Tháng ${month}/${year} có 30 ngày`;
+			}else{ // thuộc về 28 ngày
+				if(year%4 == 0){
+					result.innerText = `Tháng ${month}/${year} có 29 ngày`;
+				}else{
+					result.innerText = `Tháng ${month}/${year} có 28 ngày`;
+				}
+				
+			}
+		}
+
+		// b4: nhập ngày sinh nhật của mình vào thẻ input theo định dạng (tháng-ngay-nam)
+		// tính số ngày từ sinh nhật của mình đến bây giờ
+		function b4(){
+			// lấy giá trị trong input
+			var value = ip.value;
+			var ngaySinh = new Date(value);
+			var now = new Date();
+			now.getTime();
+			var miliseconds = now - ngaySinh;
+			var ngaySong = miliseconds/(1000*60*60*24);
+			result.innerText = `Bạn đã sống được ${ngaySong.toFixed()} ngày`;
+
+		}
+		// b5: nhập ngày tháng năm vào input theo định dạng (tháng-ngay-nam)
+		// hiển thị lại ngày đó theo định dạng ngày - tháng - năm
+		function b5(){
+			var value = ip.value;
+			var arr = value.split('-');
+			var tmp = arr[0];
+			arr[0] = arr[1];
+			arr[1] = tmp;
+			var rs = arr.join('-');
+			result.innerText = rs;
+		}
+	</script>
+</body>
+</html>
