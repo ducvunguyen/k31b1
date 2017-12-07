@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- <p><b>name:</b> Thienth</p> -->
+
+	<p>content here</p>
+	<button class="plus">click me + </button>
+	<button class="minus">click me - </button>
+	<button class="flyOut"> Fly out </button>
+	<button class="flyIn"> Fly in </button>
+	<button class="addMore"> Add more </button>
+
+
+	<br>
+	<input type="text" name="imgUrl" value="" placeholder="Enter image url">
+	<img src="" width="400">
+	<script src="public/plugins/jquery/jquery.min.js"></script>
+	<script>
+		// .text()
+		// .html()
+		
+		// var content = $('p:first').html();
+		// console.log(content)
+		// $('p:first').html('<a href="">dep trai</a>');
+		
+		// .remove()
+		// $('p:first').remove();
+
+		// .empty()
+		// $('p:first').empty();
+		
+		// .click(function(){}) ==> set su kien onclick
+		var count = 0;
+		// document.querySelector('.plus').addEventListener('click', function(){
+		// 	count++;
+		// 	$('p').text(count);
+		// });
+
+		// .toggle()
+		$('button.plus').click(function(){
+			// count++;
+			// $('p').text(count);
+			$('p').toggle();
+		});
+		$('button.minus').click(function(){
+			// count--;
+			// $('p').text(count);
+			$('p').toggle();
+		});
+
+		// .append()
+		$('.addMore').click(function(){
+			var text = prompt('enter something');
+			$('p').append(text);
+		});
+
+		// .fadeOut()
+		$('button.flyOut').click(function(){
+			$('p').fadeOut(5000);
+		});
+		// .fadeIn()
+		$('button.flyIn').click(function(){
+			$('p').fadeIn(5000);
+		});
+
+		// .attr(), .keyup(), .val()
+		$('[name=imgUrl]').keyup(function(){
+			var value = $(this).val();
+			$('img:first').attr('src', value);
+		});
+		
+		
+	</script>
+</body>
+</html>
