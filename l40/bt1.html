@@ -21,7 +21,7 @@
 		</div>
 		<div class="form-group">
 			<label>Product Image</label>
-			<input type="number" name="image" value="" placeholder="Image" class="form-control">
+			<input type="text" name="image" value="" placeholder="Image" class="form-control">
 		</div>
 		<div class="form-group">
 			<label>Product SKU</label>
@@ -53,28 +53,30 @@
 	</fieldset>
 </div>
 
-<div class="container product-list clearfix">
+<div class="container product-list ">
 	
-	<div class="col-md-4 product-image">
-		<img src="https://www.cstatic-images.com/stock/570x380/15/img-1276321340-1509471668915.jpg" alt="" class="img-thumbnail">
-	</div>
-	<div class="col-md-8 product-info">
-		<h2>Toyota camry</h2>
-		<h2>Price: <small>10000$</small></h2>
-		<p>SKU: <strong>12345</strong></p>
-		<p>
-			<strong>Attr1: </strong> <span>attr1 value</span>
-		</p>
-		<p>
-			<strong>Attr1: </strong> <span>attr1 value</span>
-		</p>
-		<p>
-			<strong>Attr1: </strong> <span>attr1 value</span>
-		</p>
-		<p>
-			<strong>Attr1: </strong> <span>attr1 value</span>
-		</p>
-	</div>
+	<div class="row clearfix">
+		<div class="col-md-4 product-image">
+			<img src="https://www.cstatic-images.com/stock/570x380/15/img-1276321340-1509471668915.jpg" alt="" class="img-thumbnail">
+		</div>
+		<div class="col-md-8 product-info">
+			<h2>Toyota camry</h2>
+			<h2>Price: <small>10000$</small></h2>
+			<p>SKU: <strong>12345</strong></p>
+			<p>
+				<strong>Attr1: </strong> <span>attr1 value</span>
+			</p>
+			<p>
+				<strong>Attr1: </strong> <span>attr1 value</span>
+			</p>
+			<p>
+				<strong>Attr1: </strong> <span>attr1 value</span>
+			</p>
+			<p>
+				<strong>Attr1: </strong> <span>attr1 value</span>
+			</p>
+		</div>		
+	</div>	
 </div>
 	
 
@@ -100,9 +102,55 @@
 			$('tbody').append(tr);
 		});
 
+		// .parent()
 		function removeAttr(btn){
-			console.log(btn);
+			$(btn).parent().parent().remove();
 		};
+		$('.btn-save').click(function(){
+			var pName = $('[name=name]').val();
+			var pImage = $('[name=image]').val();
+			var pSKU = $('[name=sku]').val();
+			var pPrice = $('[name=price]').val();
+
+			var newProduct = `<div class="row clearfix">	
+								<div class="col-md-4 product-image">
+									<img src="${pImage}" alt="" class="img-thumbnail">
+								</div>
+								<div class="col-md-8 product-info">
+									<h2>${pName}</h2>
+									<h2>Price: <small>${pPrice}$</small></h2>
+									<p>SKU: <strong>${pSKU}</strong></p>
+									`;
+			var trs = $('tbody').find('tr');
+			console.log(trs);
+			for (var i = 0; i < trs.length; i++) {
+				var inputs = $(trs[i]).find('input');
+				var attr = $(inputs[0]).val();
+				var attrValue = $(inputs[1]).val();
+				newProduct += `	<p>
+									<strong>${attr}: </strong> <span>${attrValue}</span>
+								</p>`;
+			}
+									
+			newProduct+=	`	</div>
+							</div>
+							`;
+			$('.product-list').append(newProduct);
+		});
 	</script>
 </body>
 </html>
+
+
+<!-- <p>
+	<strong>Attr1: </strong> <span>attr1 value</span>
+</p>
+<p>
+	<strong>Attr1: </strong> <span>attr1 value</span>
+</p>
+<p>
+	<strong>Attr1: </strong> <span>attr1 value</span>
+</p>
+<p>
+	<strong>Attr1: </strong> <span>attr1 value</span>
+</p> -->
