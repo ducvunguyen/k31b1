@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="public/plugins/bootstrap/css/bootstrap.min.css">
+	
+</head>
+<body>
+
+	<img src="https://auto.ndtvimg.com/car-images/medium/mercedes-amg/glc-43-coupe/mercedes-amg-glc-43-coupe.jpg?v=5" width="400">
+
+	<script src="public/plugins/jquery/jquery.min.js"></script>
+	<script>
+		var imgArr = [
+			'https://auto.ndtvimg.com/car-images/medium/mercedes-amg/glc-43-coupe/mercedes-amg-glc-43-coupe.jpg?v=5',
+			'https://www.cstatic-images.com/stock/570x380/15/img-1276321340-1509471668915.jpg',
+			'https://www.cstatic-images.com/stock/379x253/68/img1113460234-1509471692068.jpg',
+			'https://imgd.aeplcdn.com/1280x720/cw/ec/26742/Maruti-Suzuki-New-Swift-Left-Front-Three-Quarter-88877.jpg?wm=0&q=100',
+			'https://auto.ndtvimg.com/car-images/medium/hyundai/verna/hyundai-verna.jpg?v=18'
+		];
+		var index = 0;
+		var looping = null;
+		function autoplay(){
+			looping = setInterval(function(){
+				if(index == imgArr.length-1){
+					index = 0;
+				}else{
+					index++;
+				}
+				$('img').attr('src', imgArr[index]);
+			},  2000);
+		}
+
+		$('img').on('mouseover', function(){
+			clearInterval(looping);
+		});
+
+		$('img').on('mouseout', function(){
+			autoplay();
+		});
+		autoplay();	
+	</script>
+</body>
+</html>
+
+
