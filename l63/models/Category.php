@@ -29,12 +29,9 @@ class Category{
 		$sql = "insert into " . $this->table;
 		$sql .= " (name, description) ";
 		$sql .= " values ";
-		$sql .= " (:name, :description) ";
+		$sql .= " ('".$this->name."', '".$this->description."') ";
 
 		$stmt = $this->connect->prepare($sql);
-
-		$stmt->bindValue(":name", $this->name);
-		$stmt->bindValue(":description", $this->description);
 
 		$stmt->execute();
 	}

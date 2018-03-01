@@ -2,8 +2,8 @@
 require_once 'models/Category.php';
 $cateModel = new Category();
 
-$cateModel->name = 'nguyen anh van';
-$cateModel->description = 'trung jackpot';
+$cateModel->name = 'nguyen thanh cuong';
+$cateModel->description = 'cuong thi';
 $cateModel->insert();
 // danh sach danh muc
 $cateList = $cateModel->getAll();
