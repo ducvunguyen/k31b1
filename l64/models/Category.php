@@ -7,6 +7,10 @@ class Category{
 
 	var $table = 'categories';
 
+	function uppercaseName(){
+		return strtoupper($this->name);
+	}
+
 	// Ham khoi tao
 	// chay ngay lap tuc tai thoi diem new Object()
 	function __construct(){
@@ -19,7 +23,7 @@ class Category{
 		$query = "select * from ". $this->table;
 		$stmt = $this->connect->prepare($query);
 		$stmt->execute();
-		$result = $stmt->fetchAll();
+		$result = $stmt->fetchAll(PDO::FETCH_CLASS, get_class($this)); // ép kiểu các phần tử là kết quả của câu lệnh select sang thành kiểu dữ liệu Category
 		// var_dump($result);die;
 		return $result;// ket qua cua cau lenh sql
 	}
@@ -59,9 +63,10 @@ class Category{
 		$query = "select * from ". $this->table . " where id = $id";
 		$stmt = $this->connect->prepare($query);
 		$stmt->execute();
-		$result = $stmt->fetchAll();
-		// var_dump($result);die;
-		return $result;
+		$result = $stmt->fetchAll(PDO::FETCH_CLASS, get_class($this));
+		if(count($result) > 0) return $result[0];
+		
+		return null;
 	}
 }
  ?>
