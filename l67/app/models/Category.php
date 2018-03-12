@@ -1,5 +1,5 @@
 <?php 
-require_once 'app/models/database.php';
+require_once $hint.'app/models/database.php';
 class Category extends database{
 	
 	const TABLE_NAME = 'categories';
