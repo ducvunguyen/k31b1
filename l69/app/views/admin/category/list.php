@@ -6,11 +6,7 @@
 
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
-              <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-              <div class="input-group-btn">
-                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -22,7 +18,9 @@
               <th>STT</th>
               <th>Tên danh mục</th>
               <th>Ảnh</th>
-              <th></th>
+              <th>
+                <a href="category-add.php" class="btn btn-sm btn-success">Add</a>
+              </th>
             </tr>
             <?php foreach ($cates as $index => $c): ?>
             	<tr>
