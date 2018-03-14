@@ -21,7 +21,6 @@
         	<tr>
               <th>STT</th>
               <th>Tên danh mục</th>
-              <th>Danh mục cha</th>
               <th>Ảnh</th>
               <th></th>
             </tr>
@@ -29,7 +28,6 @@
             	<tr>
 	              <td><?= $index+1 ?></td>
 	              <td><?= $c->name ?></td>
-	              <td><?= $c->parent_id?></td>
 	              <td>
 	              	<img src="<?= $c->image?>" alt="">
 	              </td>
