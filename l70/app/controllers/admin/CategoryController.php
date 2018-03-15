@@ -2,7 +2,19 @@
 require_once $hint.'app/controllers/admin/BaseController.php';
 require_once $hint.'app/models/Category.php';
 class CategoryController extends BaseController{
+
+	private $viewhint = '../app/views/admin/category/';
+
 	public function index(){
+		
+		$cates = $this->getSortedCateList();
+		$title = "Danh sách danh mục";
+		$view = $this->viewhint.'list.php';
+
+		include_once $this->layoutView;
+	}
+
+	private function getSortedCateList(){
 		$cateModel = new Category();
 		$list = $cateModel->getCateList();
 		$sortOrderList = $this->get_options($list, 0, "", null);
@@ -19,10 +31,15 @@ class CategoryController extends BaseController{
 			}
 		}
 
-		$title = "Danh sách danh mục";
-		$view = '../app/views/admin/category/list.php';
+		return $cates;
+	}
 
-		include_once '../app/views/layouts/admin.php';
+
+	public function addForm(){
+		$parents = $this->getSortedCateList();
+		$title = 'Thêm danh mục';
+		$view = $this->viewhint.'add-form.php';
+		include_once $this->layoutView;
 	}
 }
 

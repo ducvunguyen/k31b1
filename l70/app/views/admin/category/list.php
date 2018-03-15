@@ -19,7 +19,7 @@
               <th>Tên danh mục</th>
               <th>Ảnh</th>
               <th>
-                <a href="category-add.php" class="btn btn-sm btn-success">Add</a>
+                <a href="category-add.php" class="btn btn-sm btn-success">Thêm</a>
               </th>
             </tr>
             <?php foreach ($cates as $index => $c): ?>
@@ -30,8 +30,8 @@
 	              	<img src="<?= $c->image?>" alt="">
 	              </td>
 	              <td>
-	              	<a href="category-edit.php?id=<?= $c->id?>" class="btn btn-sm btn-info">Edit</a>
-	              	<a href="category-remove.php?id=<?= $c->id?>" class="btn btn-sm btn-danger">remove</a>
+	              	<a href="category-edit.php?id=<?= $c->id?>" class="btn btn-sm btn-info">Sửa</a>
+	              	<a href="category-remove.php?id=<?= $c->id?>" class="btn btn-sm btn-danger">Xoá</a>
 	              </td>
 	            </tr>
             <?php endforeach ?>
