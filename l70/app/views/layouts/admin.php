@@ -43,6 +43,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- AdminLTE App -->
   <script src="../public/js/adminlte.min.js"></script>
   <script src="../public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+  <script src="../public/plugins/jquery-validate/jquery.validate.min.js"></script>
+  <script src="../public/plugins/jquery-validate/additional-methods.min.js"></script>
 </head>
 <!--
 BODY TAG OPTIONS:

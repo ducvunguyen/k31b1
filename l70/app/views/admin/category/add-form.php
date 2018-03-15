@@ -4,14 +4,14 @@
   </div>
   <!-- /.box-header -->
   <div class="box-body">
-    <form role="form" action="category-save-add.php" method="post" novalidate>
+    <form role="form" id="category-form" action="category-save-add.php" method="post" novalidate>
       <!-- text input -->
       <div class="form-group">
-        <label>Tên danh mục</label>
+        <label>Tên danh mục <span class="text-danger">*</span></label>
         <input type="text" class="form-control" placeholder="Tên danh mục ..." name="name">
       </div>
       <div class="form-group">
-        <label>Danh mục cha</label>
+        <label>Danh mục cha <span class="text-danger">*</span></label>
         <select name="parent_id" class="form-control">
           <option value="0">--- Danh mục gốc ---</option>
           <?php foreach ($parents as $cate): ?>
@@ -39,11 +39,38 @@
   </div>
   <!-- /.box-body -->
 </div>
+<style>
+  label.error{
+    color: red;
+  }
+</style>
 <script>
   
   $(function () {
     //bootstrap WYSIHTML5 - text editor
-    $('.textarea').wysihtml5()
-  })
+    $('.textarea').wysihtml5();
+
+
+    $('#category-form').validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 4,
+          maxlength: 100
+        },
+        parent_id: {
+          required: true
+        }
+      },
+      messages: {
+        name:{
+          required: "Vui lòng nhập tên danh mục",
+          minlength: "Độ dài tối thiểu lớn hơn 4 ký tự"
+        }
+      }
+    });
+  });
+
+
 
 </script>

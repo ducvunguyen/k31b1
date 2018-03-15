@@ -41,6 +41,12 @@ class CategoryController extends BaseController{
 		$view = $this->viewhint.'add-form.php';
 		include_once $this->layoutView;
 	}
+
+	public function saveAdd(){
+		$model = new Category();
+
+		$model->name = $_POST['name'];
+	}
 }
 
  ?>
